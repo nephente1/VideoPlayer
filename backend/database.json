@@ -1,0 +1,95 @@
+[
+  {
+    "title": "Master of None",
+    "year": "2015",
+    "poster": "mon.jpg",
+    "imdbID": "tt4635276"
+  },
+  {
+    "title": "Narcos",
+    "year": "2015",
+    "poster": "n.jpg",
+    "imdbID": "tt2707408"
+  },
+  {
+    "title": "The Americans",
+    "year": "2010",
+    "description": "Two Soviet intelligence agents pose as a married couple to spy on the American government.",
+    "poster": "ta.jpg",
+    "imdbID": "tt2149175",
+    "trailer": "HjuUkbhsI24"
+  },
+  {
+    "title": "Veep",
+    "year": "2006",
+    "poster": "v.jpg",
+    "imdbID": "tt1759761"
+  },
+  {
+    "title": "Westworld",
+    "year": "2020",
+    "poster": "ww.jpg",
+    "imdbID": "tt0475784"
+  },
+  {
+    "title": "Black Mirror",
+    "year": "2011",
+    "poster": "bm.jpg",
+    "imdbID": "tt2085059"
+  },
+  {
+    "title": "Stranger Things",
+    "year": "2019",
+    "poster": "st.jpg",
+    "imdbID": "tt4574334"
+  },
+  {
+    "title": "Game of Thrones",
+    "year": "2011",
+    "poster": "got.jpg",
+    "imdbID": "tt0944947"
+  },
+  {
+    "title": "Homeland",
+    "year": "2017",
+    "poster": "h.jpg",
+    "imdbID": "tt1796960"
+  },
+  {
+    "title": "Breaking Bad",
+    "year": "2008",
+    "poster": "bb.jpg",
+    "imdbID": "tt0903747"
+  },
+  {
+    "title": "Orange Is the New Black",
+    "year": "2018",
+    "poster": "oitnb.jpg",
+    "imdbID": "tt2372162"
+  },
+  {
+    "title": "Silicon Valley",
+    "year": "2019",
+    "poster": "sv.jpg",
+    "imdbID": "tt2575988"
+  },
+  {
+    "title": "Atlanta",
+    "year": "2008",
+    "poster": "a.jpg",
+    "imdbID": "tt4288182"
+  },
+  {
+    "title": "House of Cards",
+    "year": "2013",
+    "poster": "hoc.jpg",
+    "imdbID": "tt1856010"
+  },
+  {
+    "title": "Billions",
+    "year": "2016",
+    "poster": "b.jpg",
+    "imdbID": "tt4270492"
+  }
+  
+]
