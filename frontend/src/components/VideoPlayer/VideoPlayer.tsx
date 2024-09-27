@@ -4,7 +4,6 @@ import { getRandomItem } from "../../shared/utils";
 import { useNavigate } from "react-router-dom";
 import { VideoWrapper, OptionsHeaderContainer, MuteWrapper, Video, ButtonsWrapper, ButtonPlayer, ProgressContainer, ProgressBar } from "./VideoPlayer.styles";
 
-
 interface VideoPlayerProps {
   title?: string;
 }

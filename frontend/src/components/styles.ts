@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { THEME } from '../shared/theme';
+import { Link } from 'react-router-dom';
 
 export const AppLayout = styled.div`
   min-height: 100vh;
@@ -87,4 +88,8 @@ export const Loader = styled.div<{position?: string}>`
     right: 0;
     margin: auto;
   }
+`;
+
+export const LinkCustom = styled(Link)`
+  color: ${THEME.COLORS.LIGHT_GREY};
 `;

@@ -5,11 +5,9 @@ import { Selector } from "../components/SortSelector/SortSelector";
 import { SORTING_OPTIONS, sortingOptions } from "../shared/utils";
 import { DataContext } from "../components/DataProvider";
 
-
 export const ListingPage = () => {
   const { moviesData, loading, error } = useContext(DataContext);
   const [selectedOption, setSelectedOption] = useState('');
-
 
   if (loading) return <Loader data-testid="loader" position='absolute' />;
   if (error) return <div>Error: {error}</div>;
