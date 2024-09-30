@@ -7,13 +7,13 @@ import { PageView } from './PageView';
 export const RouterComponent = () => {
   return (
     <BrowserRouter>
-      <PageView>
-        <Routes>
+      <Routes>
+        <Route path="/" element={<PageView />}>
           <Route path="/" element={<ListingPage />}/>
           <Route path="preview/:name" element={<PreviewPage />} />
           <Route path="*" element={<NoMatch />} />
-        </Routes>
-      </PageView>
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 };
