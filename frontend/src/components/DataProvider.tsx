@@ -26,11 +26,11 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       const response = await axios.get("http://localhost:4000/api/clips");
       setMoviesData(response.data.moviesList);
-      setLoading(false);
     } catch(err: any) {
       setError(err.message);
+    } finally {
       setLoading(false);
-    };
+    }
   }
 
   // Fetch data from an API
