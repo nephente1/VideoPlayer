@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { MovieBox, ImageWrapper, Image, Description, Title, TileText } from './MovieCard.styles';
+import { memo } from 'react';
 
 export interface MovieCardProps {
   title: string,
@@ -8,7 +9,7 @@ export interface MovieCardProps {
   imdbID: string
 }
 
-export const MovieCard = ({ title, year, poster, imdbID }: MovieCardProps) => {
+export const MovieCard = memo(({ title, year, poster, imdbID }: MovieCardProps) => {
   const navigate = useNavigate();
   const imageSrc = require(`../../files/images/${poster}`)
 
@@ -27,4 +28,4 @@ export const MovieCard = ({ title, year, poster, imdbID }: MovieCardProps) => {
       </Description>
     </MovieBox>
   );
-};
+});
