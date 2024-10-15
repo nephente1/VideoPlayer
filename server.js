@@ -1,17 +1,17 @@
-const express = require("express");
-const cors = require("cors");
+const express = require('express');
+const cors = require('cors');
 const app = express();
 const path = require('path');
 const PORT = 3000;
-const moviesList = require('./frontend/database.json');
+const moviesList = require('./database.json');
 
 // Use CORS to allow cross-origin requests
-app.use(cors());
+// app.use(cors());
 
 // Middleware do obsługi statycznych plików Reacta
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.get("/api/clips", (req, res) => {
+app.get('/api/clips', (req, res) => {
   res.json({ moviesList });
 });
 

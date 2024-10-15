@@ -18,10 +18,6 @@ export const MovieCard = memo(({ title, year, poster, imdbID }: MovieCardProps) 
     navigate(`/preview/${imdbID}`);
   };
 
-  React.useEffect(() => {
-    console.log('effect');
-  }, []);
-
   return (
     <MovieBox onClick={handleClickBox}>
       <ImageWrapper>
