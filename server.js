@@ -3,7 +3,7 @@ const cors = require("cors");
 const app = express();
 const path = require('path');
 const PORT = 3000;
-const moviesList = require('./database.json');
+const moviesList = require('./frontend/database.json');
 
 // Use CORS to allow cross-origin requests
 app.use(cors());
