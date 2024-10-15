@@ -1,8 +1,17 @@
-import { useRef, useState, useEffect } from "react";
-import { ContainerTitle, Navigation } from "../styles";
-import { getRandomItem } from "../../shared/utils";
-import { useNavigate } from "react-router-dom";
-import { VideoWrapper, OptionsHeaderContainer, MuteWrapper, Video, ButtonsWrapper, ButtonPlayer, ProgressContainer, ProgressBar } from "./VideoPlayer.styles";
+import { getRandomItem } from '../../shared/utils';
+import { ContainerTitle, Navigation } from '../styles';
+import {
+  VideoWrapper,
+  OptionsHeaderContainer,
+  MuteWrapper,
+  Video,
+  ButtonsWrapper,
+  ButtonPlayer,
+  ProgressContainer,
+  ProgressBar,
+} from './VideoPlayer.styles';
+import { useRef, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface VideoPlayerProps {
   title?: string;
@@ -10,11 +19,10 @@ interface VideoPlayerProps {
 export const VideoPlayer = ({ title }: VideoPlayerProps) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
-  const navigate= useNavigate();
+  const navigate = useNavigate();
   const [isPlaying, setIsPlaying] = useState(false);
   const [progressNumber, setProgressNumber] = useState(0);
   const [isMuted, setIsMuted] = useState(true);
-
 
   // Toggle play/pause
   const handlePlayPause = () => {
@@ -45,7 +53,7 @@ export const VideoPlayer = ({ title }: VideoPlayerProps) => {
   // Handle mute
   const handleMute = () => {
     if (videoRef.current) {
-      setIsMuted(!isMuted)
+      setIsMuted(!isMuted);
       videoRef.current.muted = isMuted;
     }
   };
@@ -74,7 +82,7 @@ export const VideoPlayer = ({ title }: VideoPlayerProps) => {
 
     // Calculate the corresponding time in the video
     const newTime = (clickPercentage / 100) * videoElement.duration;
-    
+
     // Update the video's current time
     videoElement.currentTime = newTime;
     setProgressNumber(clickPercentage);
@@ -88,12 +96,12 @@ export const VideoPlayer = ({ title }: VideoPlayerProps) => {
 
     const videoElement = videoRef.current;
     if (videoElement) {
-      videoElement.addEventListener("ended", handleEnded);
+      videoElement.addEventListener('ended', handleEnded);
     }
 
     return () => {
       if (videoElement) {
-        videoElement.removeEventListener("ended", handleEnded);
+        videoElement.removeEventListener('ended', handleEnded);
       }
     };
   }, []);
@@ -137,71 +145,68 @@ export const VideoPlayer = ({ title }: VideoPlayerProps) => {
   }, []);
 
   const toggleFullScreen = () => {
-    const element = document.getElementById("video-container");
+    const element = document.getElementById('video-container');
     const isFullScreen = document.fullscreenElement;
     if (isFullScreen) {
       document.exitFullscreen();
     } else {
-      element?.requestFullscreen()
+      element?.requestFullscreen();
     }
-  }
+  };
   const item = getRandomItem();
 
-  return (   
+  return (
     <VideoWrapper id="video-container">
-      <Navigation onClick={() => navigate('/')}><span className="material-symbols-outlined">arrow_back</span>back</Navigation>
+      <Navigation onClick={() => navigate('/')}>
+        <span className="material-symbols-outlined">arrow_back</span>back
+      </Navigation>
       <OptionsHeaderContainer>
-      <ContainerTitle>{title}</ContainerTitle>
-      <MuteWrapper onClick={handleMute}>
-        { isMuted ?
-          <span className="material-symbols-outlined">volume_mute</span> :
-          <span className="material-symbols-outlined">volume_off</span> 
-        }
-      </MuteWrapper>
+        <ContainerTitle>{title}</ContainerTitle>
+        <MuteWrapper onClick={handleMute}>
+          {isMuted ? (
+            <span className="material-symbols-outlined">volume_mute</span>
+          ) : (
+            <span className="material-symbols-outlined">volume_off</span>
+          )}
+        </MuteWrapper>
       </OptionsHeaderContainer>
       <div>
-      <Video
-        ref={videoRef}
-        onTimeUpdate={handleTimeUpdate}
-      >
-        <source
-          src={item}
-          type="video/mp4"
-        />
-        Your browser does not support HTML video.
-      </Video></div>
+        <Video ref={videoRef} onTimeUpdate={handleTimeUpdate}>
+          <source src={item} type="video/mp4" />
+          Your browser does not support HTML video.
+        </Video>
+      </div>
 
       <ButtonsWrapper>
         <ButtonPlayer onClick={handleBackward}>
-          <span className="material-symbols-outlined">keyboard_double_arrow_left</span> 
+          <span className="material-symbols-outlined">keyboard_double_arrow_left</span>
           <div>10s</div>
         </ButtonPlayer>
         <ButtonPlayer onClick={handlePlayPause}>
-          {isPlaying ? 
+          {isPlaying ? (
             <>
               <span className="material-symbols-outlined">pause</span>
               <div>Pause</div>
-            </> : 
+            </>
+          ) : (
             <>
               <span className="material-symbols-outlined">play_arrow</span>
               <div>Play</div>
             </>
-          }</ButtonPlayer>
+          )}
+        </ButtonPlayer>
         <ButtonPlayer onClick={handleForward}>
           <div>10s</div>
           <span className="material-symbols-outlined">keyboard_double_arrow_right</span>
         </ButtonPlayer>
       </ButtonsWrapper>
 
-      <ProgressContainer
-        ref={progressBarRef}
-        onClick={handleProgressBarClick}
-      >
-        <ProgressBar style={{width: `${progressNumber}%`}} />
+      <ProgressContainer ref={progressBarRef} onClick={handleProgressBarClick}>
+        <ProgressBar style={{ width: `${progressNumber}%` }} />
       </ProgressContainer>
 
       <span>{Math.round(progressNumber)}% watched</span>
-      
+
       <ButtonsWrapper>
         <ButtonPlayer onClick={toggleFullScreen}>
           <div>toggle fullscreen</div>

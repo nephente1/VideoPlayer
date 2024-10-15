@@ -1,11 +1,11 @@
-import styled from 'styled-components';
 import { THEME } from '../../shared/theme';
+import styled from 'styled-components';
 
 export const MovieBox = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-image: url("https://t3.ftcdn.net/jpg/01/32/88/96/360_F_132889692_W14mjkYW7IpG87gaGXWtUWMsrl07fTe2.jpg");
+  background-image: url('https://t3.ftcdn.net/jpg/01/32/88/96/360_F_132889692_W14mjkYW7IpG87gaGXWtUWMsrl07fTe2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   color: ${THEME.COLORS.MAIN};
@@ -14,7 +14,7 @@ export const MovieBox = styled.div`
   width: 190px;
   height: 280px;
   cursor: pointer;
-  box-shadow: -3px 3px 6px 5px rgba(0,0,0,0.20);
+  box-shadow: -3px 3px 6px 5px rgba(0, 0, 0, 0.2);
   transform: scale(1);
   &:hover {
     transform: scale(1.03);
@@ -52,7 +52,7 @@ export const ImageWrapper = styled.div`
   height: 192px;
   width: auto;
   margin-bottom: 5px;
-  box-shadow: -2px 2px 5px 3px rgba(0,0,0,0.10);
+  box-shadow: -2px 2px 5px 3px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 `;
 

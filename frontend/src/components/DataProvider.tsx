@@ -1,6 +1,6 @@
-import React, { createContext, useEffect, useState } from 'react';
-import axios from 'axios';
 import { MovieCardProps } from './MovieCard/MovieCard';
+import axios from 'axios';
+import React, { createContext, useEffect, useState } from 'react';
 
 // Define the context type
 interface DataContextType {
@@ -22,25 +22,21 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchData = async() => {
+  const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/clips");
+      const response = await axios.get('http://localhost:4000/api/clips');
       setMoviesData(response.data.moviesList);
-    } catch(err: any) {
+    } catch (err: any) {
       setError(err.message);
     } finally {
       setLoading(false);
     }
-  }
+  };
 
   // Fetch data from an API
   useEffect(() => {
     fetchData();
   }, []);
 
-  return (
-    <DataContext.Provider value={{ moviesData, loading, error }}>
-      {children}
-    </DataContext.Provider>
-  );
+  return <DataContext.Provider value={{ moviesData, loading, error }}>{children}</DataContext.Provider>;
 };

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { THEME } from '../../shared/theme';
+import styled from 'styled-components';
 
 export const HeaderWrapper = styled.header`
   height: 80px;
@@ -14,7 +14,7 @@ export const HeaderWrapper = styled.header`
     margin: 4px 10px 0 0;
     font-size: 60px;
   }
-    & h1 {
+  & h1 {
     font-size: 28px;
   }
 `;

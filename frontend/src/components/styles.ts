@@ -1,6 +1,6 @@
-import styled, { keyframes } from 'styled-components';
 import { THEME } from '../shared/theme';
 import { Link } from 'react-router-dom';
+import styled, { keyframes } from 'styled-components';
 
 export const AppLayout = styled.div`
   min-height: 100vh;
@@ -46,7 +46,7 @@ export const Navigation = styled.span`
   gap: 5px;
   cursor: pointer;
   margin: 5px 0;
-  color: ${THEME.COLORS.LIGHT_GREY}
+  color: ${THEME.COLORS.LIGHT_GREY};
 `;
 
 export const BoxesContainer = styled.div`
@@ -63,16 +63,16 @@ const loadingSpinner = keyframes`
   to { transform: rotate(360deg)}
 `;
 
-export const Loader = styled.div<{position?: string}>`
-  width: ${(props) => props.position === 'absolute' ? '100%' : '100px'};
-  height: ${(props) => props.position === 'absolute' ? '100%' : '100px'};
+export const Loader = styled.div<{ position?: string }>`
+  width: ${(props) => (props.position === 'absolute' ? '100%' : '100px')};
+  height: ${(props) => (props.position === 'absolute' ? '100%' : '100px')};
   margin: auto;
-  position: ${(props) => props.position === 'absolute' ? 'absolute' : 'relative'};
+  position: ${(props) => (props.position === 'absolute' ? 'absolute' : 'relative')};
   top: 0;
   left: 0;
 
   &::after {
-    content: " ";
+    content: ' ';
     display: block;
     position: absolute;
     width: 80px;

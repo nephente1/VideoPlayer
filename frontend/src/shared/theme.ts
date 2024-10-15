@@ -18,6 +18,6 @@ export const THEME = {
     MAIN: '#896686',
     TRANSPARENT_BLUE: '#161226c7',
     LIGHT_GREY: '#f1f1f1',
-    TRANSPARENT_BLACK: '#0202025c'
+    TRANSPARENT_BLACK: '#0202025c',
   },
 };

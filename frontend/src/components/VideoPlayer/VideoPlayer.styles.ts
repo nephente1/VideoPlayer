@@ -1,5 +1,5 @@
+import { THEME } from '../../shared/theme';
 import styled from 'styled-components';
-import { THEME } from "../../shared/theme";
 
 export const Video = styled.video`
   display: block;
@@ -18,7 +18,7 @@ export const ButtonPlayer = styled.button`
   margin: 0 4px;
   display: flex;
   align-items: center;
-  gap:4px;
+  gap: 4px;
 
   & span {
     font-size: 30px;
@@ -52,7 +52,7 @@ export const ProgressBar = styled.div`
 export const VideoWrapper = styled.div`
   max-width: 110vh;
   width: 100%;
-  margin: 0 auto; 
+  margin: 0 auto;
   text-align: center;
 `;
 
@@ -66,7 +66,7 @@ export const MuteWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
-  & span{
+  & span {
     font-size: 36px;
   }
 `;

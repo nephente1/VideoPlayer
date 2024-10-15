@@ -1,7 +1,7 @@
-import { ThemeProvider as StyledThemeProvider } from 'styled-components';
-import { GlobalStyle, THEME } from './shared/theme';
-import { RouterComponent } from './components/RoutingComponent';
 import { DataProvider } from './components/DataProvider';
+import { RouterComponent } from './components/RoutingComponent';
+import { GlobalStyle, THEME } from './shared/theme';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
 const App = () => {
   return (
@@ -11,8 +11,7 @@ const App = () => {
         <RouterComponent />
       </StyledThemeProvider>
     </DataProvider>
-    
   );
-}
+};
 
 export default App;

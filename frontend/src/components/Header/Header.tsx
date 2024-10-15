@@ -1,5 +1,5 @@
+import { HeaderWrapper, Logo } from './Header.styles';
 import { useNavigate } from 'react-router-dom';
-import { HeaderWrapper, Logo } from "./Header.styles";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -11,7 +11,6 @@ export const Header = () => {
         <h1>CineMaster</h1>
         <div>Choose your favorite movie</div>
       </Logo>
-      
     </HeaderWrapper>
   );
 };
