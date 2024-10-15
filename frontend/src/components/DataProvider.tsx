@@ -24,7 +24,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/clips');
+      const response = await axios.get('http://localhost:3000/api/clips');
       setMoviesData(response.data.moviesList);
     } catch (err: any) {
       setError(err.message);
