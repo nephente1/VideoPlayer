@@ -29,7 +29,7 @@
     "eject": "react-scripts eject",
     "prod": "nodemon server.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build -b frontend"
   },
   "browserslist": {
     "production": [
