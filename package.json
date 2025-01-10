@@ -27,9 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prod": "nodemon server.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -b frontend"
+    "prod": "nodemon server.js"
   },
   "browserslist": {
     "production": [
