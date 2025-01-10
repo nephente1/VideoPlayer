@@ -11,7 +11,7 @@ export const RouterComponent = () => {
         <Route path="/" element={<PageView />}>
           <Route path="/" element={<ListingPage />} />
           <Route path="preview/:name" element={<PreviewPage />} />
-          <Route path="*" element={<NoMatch />} />
+          {/* <Route path="*" element={<NoMatch />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>
