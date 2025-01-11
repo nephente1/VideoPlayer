@@ -2,7 +2,6 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nephente1.github.io/VideoPlayer",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@types/jest": "^27.5.2",
@@ -54,7 +53,6 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.1",
     "eslint-plugin-react-hooks": "^5.0.0",
-    "gh-pages": "^6.3.0",
     "prettier": "^3.3.3"
   },
   "jest": {
