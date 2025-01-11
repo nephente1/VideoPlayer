@@ -12,6 +12,7 @@ export const Select = styled.select`
   cursor: pointer;
   &:focus {
     outline: 0;
+    border-color: ${THEME.COLORS.LIGHT_VIOLET};
   }
 `;
 

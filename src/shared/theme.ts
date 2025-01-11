@@ -19,5 +19,6 @@ export const THEME = {
     TRANSPARENT_BLUE: '#161226c7',
     LIGHT_GREY: '#f1f1f1',
     TRANSPARENT_BLACK: '#0202025c',
+    LIGHT_VIOLET: '#ab6aa6',
   },
 };

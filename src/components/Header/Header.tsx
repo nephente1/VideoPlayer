@@ -5,9 +5,9 @@ export const Header = () => {
   const navigate = useNavigate();
 
   return (
-    <HeaderWrapper>
-      <span className="material-symbols-outlined">movie</span>
-      <Logo onClick={() => navigate('/')}>
+    <HeaderWrapper onClick={() => navigate('/')}>
+      <div className="material-symbols-outlined">movie</div>
+      <Logo>
         <h1>CineMaster</h1>
         <div>Choose your favorite movie</div>
       </Logo>

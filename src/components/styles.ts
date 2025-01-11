@@ -8,7 +8,7 @@ export const AppLayout = styled.div`
   grid-template-rows: auto 1fr auto;
   background: #e5e5e5;
   font-size: 16px;
-  background: radial-gradient(#6e3030, #24275a);
+  background: radial-gradient(rgb(141, 71, 71), rgb(36, 39, 90));
 `;
 
 export const Container = styled.div`
@@ -92,4 +92,19 @@ export const Loader = styled.div<{ position?: string }>`
 
 export const LinkCustom = styled(Link)`
   color: ${THEME.COLORS.LIGHT_GREY};
+`;
+
+export const Input = styled.input`
+  height: 30px;
+  width: 200px;
+  background: ${THEME.COLORS.TRANSPARENT_BLACK};
+  color: ${THEME.COLORS.LIGHT_GREY};
+  border: 1px solid #5b5074;
+  border-radius: 4px;
+  padding: 4px 6px;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+    border-color: ${THEME.COLORS.LIGHT_VIOLET};
+  }
 `;

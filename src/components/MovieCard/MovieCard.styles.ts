@@ -2,6 +2,7 @@ import { THEME } from '../../shared/theme';
 import styled from 'styled-components';
 
 export const MovieBox = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -16,9 +17,15 @@ export const MovieBox = styled.div`
   cursor: pointer;
   box-shadow: -3px 3px 6px 5px rgba(0, 0, 0, 0.2);
   transform: scale(1);
+  z-index: 1;
   &:hover {
     transform: scale(1.03);
     transition: 0.3s;
+    color: ${THEME.COLORS.LIGHT_VIOLET};
+  }
+  &:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
   }
 `;
 
@@ -50,14 +57,39 @@ export const Description = styled.div`
 
 export const ImageWrapper = styled.div`
   height: 192px;
-  width: auto;
+  width: 160px;
   margin-bottom: 5px;
   box-shadow: -2px 2px 5px 3px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 `;
 
 export const Image = styled.img`
+  width: 100%;
   height: 100%;
-  width: auto;
+  object-fit: cover;
+  object-position: center;
+  min-height: 100%;
   border-radius: 4px;
+`;
+
+export const Tooltip = styled.div`
+  position: fixed;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 0.2s,
+    visibility 0.2s;
+  z-index: 20;
+  width: 190px;
+  word-wrap: break-word;
+  white-space: normal;
+  text-align: center;
 `;

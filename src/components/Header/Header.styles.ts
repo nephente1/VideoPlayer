@@ -9,8 +9,9 @@ export const HeaderWrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 
-  & span {
+  & .material-symbols-outlined {
     margin: 4px 10px 0 0;
     font-size: 60px;
   }
@@ -21,6 +22,5 @@ export const HeaderWrapper = styled.header`
 
 export const Logo = styled.div`
   display: flex;
-  cursor: pointer;
   flex-direction: column;
 `;

@@ -1,48 +1,26 @@
 import { DataContext } from '../components/DataProvider';
-import { MovieCard, MovieCardProps } from '../components/MovieCard/MovieCard';
 import { Selector } from '../components/SortSelector/SortSelector';
 import { BoxesContainer, CenterAlignedContainer, Loader } from '../components/styles';
-import { SORTING_OPTIONS, sortingOptions } from '../shared/utils';
-import { useContext, useState } from 'react';
+import { sortingOptions } from '../shared/utils';
+import { MovieList } from 'components/MovieList';
+import { SearchComponent } from 'components/SearchComponent';
+import { useSortedMovies } from 'files/useSortedMovies';
+import { useContext } from 'react';
 
 export const ListingPage = () => {
   const { moviesData, loading, error } = useContext(DataContext);
-  const [selectedOption, setSelectedOption] = useState('');
+  const { selectedOption, setSelectedOption, searchTerm, setSearchTerm, sortedMovies } = useSortedMovies(moviesData);
 
   if (loading) return <Loader data-testid="loader" position="absolute" />;
   if (error) return <div>Error: {error}</div>;
 
-  const sortedAZItems = [...moviesData].sort((a, b) => a.title.localeCompare(b.title));
-
-  const sortedZAItems = [...moviesData].sort((a, b) => a.title.localeCompare(b.title)).reverse();
-
-  const sortedNewestItems = [...moviesData].sort((a, b) => a.year.localeCompare(b.year)).reverse();
-
-  const sortedOldestItems = [...moviesData].sort((a, b) => a.year.localeCompare(b.year));
-
-  const displayMovies = (option: string) => {
-    switch (option) {
-      case '':
-        return moviesData.map((movie: MovieCardProps) => <MovieCard key={movie.imdbID} {...movie} />);
-      case SORTING_OPTIONS.SORT_AZ:
-        return sortedAZItems.map((movie: MovieCardProps) => <MovieCard key={movie.imdbID} {...movie} />);
-      case SORTING_OPTIONS.SORT_ZA:
-        return sortedZAItems.map((movie: MovieCardProps) => <MovieCard key={movie.imdbID} {...movie} />);
-      case SORTING_OPTIONS.FROM_NEWEST:
-        return sortedNewestItems.map((movie: MovieCardProps) => <MovieCard key={movie.imdbID} {...movie} />);
-      case SORTING_OPTIONS.FROM_OLDEST:
-        return sortedOldestItems.map((movie: MovieCardProps) => <MovieCard key={movie.imdbID} {...movie} />);
-      default:
-        moviesData.map((movie: MovieCardProps) => <MovieCard key={movie.imdbID} {...movie} />);
-    }
-  };
-
   return (
     <>
       <CenterAlignedContainer>
+        <SearchComponent searchTerm={searchTerm} onSearchChange={setSearchTerm} />
         <Selector options={sortingOptions} value={selectedOption} onChange={setSelectedOption} />
       </CenterAlignedContainer>
-      <BoxesContainer>{!loading && displayMovies(selectedOption)}</BoxesContainer>
+      <BoxesContainer>{!loading && <MovieList movies={sortedMovies} />}</BoxesContainer>
     </>
   );
 };

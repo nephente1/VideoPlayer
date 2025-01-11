@@ -1,4 +1,4 @@
-import { MovieBox, ImageWrapper, Image, Description, Title, TileText } from './MovieCard.styles';
+import { MovieBox, ImageWrapper, Image, Description, Title, TileText, Tooltip } from './MovieCard.styles';
 import { memo } from 'react';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -8,9 +8,10 @@ export interface MovieCardProps {
   year: string;
   poster: string;
   imdbID: string;
+  description: string;
 }
 
-export const MovieCard = memo(({ title, year, poster, imdbID }: MovieCardProps) => {
+export const MovieCard = memo(({ title, year, poster, imdbID, description }: MovieCardProps) => {
   const navigate = useNavigate();
   const imageSrc = require(`../../files/images/${poster}`);
 
@@ -33,6 +34,7 @@ export const MovieCard = memo(({ title, year, poster, imdbID }: MovieCardProps) 
         </Title>
         <TileText data-testid="movie-title">{year}</TileText>
       </Description>
+      <Tooltip className="tooltip">{description}</Tooltip>
     </MovieBox>
   );
 });
